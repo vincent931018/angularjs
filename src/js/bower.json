@@ -1,0 +1,13 @@
+{
+  "name": "myApp",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "angular": "angularjs#^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}
