@@ -1,13 +1,16 @@
 {
-  "name": "myApp",
+  "name": "angular-demo",
   "description": "A starter project for AngularJS",
   "version": "0.0.0",
   "homepage": "",
   "license": "MIT",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  },
   "devDependencies": {
-    "angular": "angularjs#^1.5.8",
+    "angular": "^1.5.8",
     "angular-route": "^1.5.8"
   }
 }

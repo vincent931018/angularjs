@@ -2,17 +2,31 @@
 <html lang="en" ng-app="myApp">
 <head>
   <link rel="shortcut icon"  href="img/favicon.ico" />
-  <link rel="stylesheet" href="css/myAppCss.css"/>
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/myAppCss.css">
+  <!-- endinject -->
+
   <meta charset="utf-8">
   <title>Angular Router</title>
 </head>
 
 <body ng-view>
 
-<script src = "js/bower_components/angular/angular.js"></script>
-<script src = "js/bower_components/angular-route/angular-route.js"></script>
+<!-- bower:js -->
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<!-- endbower -->
+
 <script src = "js/index.js"></script>
-<script src = "dist/controller/myAppController.min.js"></script>
-<script src = "dist/service/myAppService.min.js"></script>
+
+<!-- inject:js -->
+<script src="js/controllers/helloController.js"></script>
+<script src="js/controllers/startController.js"></script>
+<script src="js/services/helloService.js"></script>
+<script src="js/services/startService.js"></script>
+<!-- endinject -->
+
 </body>
 </html>
