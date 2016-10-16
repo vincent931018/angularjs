@@ -5,6 +5,9 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var notify = require('gulp-notify');
 var jshint = require('gulp-jshint');
+var watch = require('gulp-watch');
+var browserSync = require('browser-sync').create();
+var connect = require('gulp-connect');
 
 gulp.task('minifyjs',['clean'],function(){
      return gulp.src('src/js/controllers/*.js')  //选择合并的JS
@@ -35,6 +38,19 @@ gulp.task('jshint', function(){
     gulp.src('src/dist/*/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
+});
+
+gulp.task('serve',['webserver'], function () {
+    browserSync.init({
+        proxy: "http://127.0.0.1:8080/src/index.html"
+    });
+
+    gulp.watch('src/**/*').on('change', browserSync.reload);
+});
+
+//gulp起一个web服务 8080端口
+gulp.task('webserver', function() {
+    connect.server();
 });
 
 gulp.task('default', function(){
