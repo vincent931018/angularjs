@@ -23,21 +23,18 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
  *  Default task clean temporaries directories and launch the
  *  main optimization build task
  */
-gulp.task('default', ['devIndex'], function() {
+gulp.task('default', function() {
     gulp.run('serve');
 });
 
 //端口3000
-gulp.task('serve',['webserver'], function () {
+gulp.task('serve', function () {
     browserSync.init({
-        proxy: "http://127.0.0.1:8080/src"
+        startPath: '/src',
+        server: {
+            baseDir: '.'
+        }
     });
 
     gulp.watch('src/**/*.*').on('change', browserSync.reload);
 });
-
-//gulp起一个web服务 8080端口
-gulp.task('webserver', function() {
-    connect.server();
-});
-
