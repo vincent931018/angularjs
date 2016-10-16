@@ -40,6 +40,7 @@ gulp.task('jshint', function(){
         .pipe(jshint.reporter('default'))
 });
 
+//端口3000
 gulp.task('serve',['webserver'], function () {
     browserSync.init({
         proxy: "http://127.0.0.1:8080/src/index.html"
