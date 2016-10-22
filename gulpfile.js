@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var wrench = require('wrench');
-var connect = require('gulp-connect');
 var browserSync = require('browser-sync').create();
 var watch = require('gulp-watch');
 
