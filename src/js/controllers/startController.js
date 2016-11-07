@@ -4,4 +4,8 @@ myApp.controller('startController',['$scope',function($scope){
 
     $scope.start = "caowencheng";
 
+    $scope.clickAll = function(){
+    	$scope.checkBox = true;
+    }
+
 }]);
