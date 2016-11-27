@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
 <head>
   <link rel="shortcut icon"  href="img/favicon.ico" />
   <!-- bower:css -->
@@ -12,7 +12,7 @@
   <title>Angular Router</title>
 </head>
 
-<body ng-view>
+<body ng-view ng-controller = 'globalController'>
 
 <!-- bower:js -->
 <script src="./js/lib/angular/angular.min.js"></script>
@@ -20,6 +20,10 @@
 <!-- endbower -->
 
 <script src = "js/index.js"></script>
+
+<script src="js/common/toolService.js"></script>
+<script src="js/common/http.js"></script>
+<script src="js/common/interceptor.js"></script>
 
 <script src="js/directives/start.js"></script>
 
