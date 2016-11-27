@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp');
 
-myApp.factory('mockInterceptor',['httpService',function(httpService) {
+myApp.factory('mockInterceptor',['$q',function($q) {
 
     var mockInterceptor = {
 
