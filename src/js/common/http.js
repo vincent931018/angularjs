@@ -3,30 +3,44 @@ var myApp = angular.module('myApp');
 myApp.factory('httpService', ['$q', '$http', '$rootScope', function($q, $http, $rootScope) {
 
 	var defer = $q.defer();
+	var data = {};
 
-    var httpConfig = {
-        method: "JSONP",
-        timeout: 3000,
-        data: {},
-        url: "http://192.168.0.107:8093/mock/checkBlackList?callback=JSON_CALLBACK"
-    };
-
-    var getData = function(){
+    var getData = function(params){
+    	var httpConfig = {
+	        method: "JSONP",
+	        timeout: 3000,
+	        data: params,
+	        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+	        url: "http://192.168.0.107:8093/mock/checkBlackList?callback=JSON_CALLBACK",
+	        responseType: "json"
+	    };
     	$http(httpConfig)
 	    .success(function(data){
-	    	if(data){
-	    		console.log(data);
+	    	if(data.success){
 	    		defer.resolve(data);
-	    		return data;
 	    	}else{
 	    		defer.reject(data);
-	    		return data;
 	    	}
+	    })
+	    .error(function(data){
+	    	return data;
 	    });
+	    return defer.promise;
     };
 
+    var getResponse = function (params) {
+            var delay = $q.defer();
+            var promise = getData(params);
+            promise.then(function (data) {
+                delay.resolve(data);
+            }, function (data) {
+                delay.reject(data);
+            });
+            return delay.promise;
+        }
+
     var httpService = {
-    	'getData' : getData
+    	'getResponse' : getResponse
     };
 
     return httpService;

@@ -1,5 +1,7 @@
 var myApp = angular.module('myApp');
 
-myApp.service('helloService',['$scope'],function($scope){
+myApp.service('startService',['httpService',function(httpService){
 
-});
+	this.getResponse = httpService.getResponse;
+
+}]);

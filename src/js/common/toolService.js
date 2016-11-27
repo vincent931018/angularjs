@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp');
 
-myApp.factory('toolService', ['$rootScope','$scope',function($rootScope,$scope) {
+myApp.factory('toolService', ['$rootScope',function($rootScope) {
 
     var toolService = {
 

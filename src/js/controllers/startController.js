@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp');
 
-myApp.controller('startController',['$scope',function($scope){
+myApp.controller('startController',['$scope','startService',function($scope,startService){
 
     $scope.start = "caowencheng";
 
