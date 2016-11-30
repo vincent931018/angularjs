@@ -2,6 +2,13 @@ var myApp = angular.module('myApp');
 
 myApp.service('helloService',['$q','httpService',function($q,httpService){
 
+	httpService.addReqConfig([{
+            name: 'checkBlackList',
+            url: '/checkBlackList',
+            retry: true,
+            isMock: true,
+        }]);
+
 	this.getData = function(url,params){
 
 		var defer = $q.defer();
