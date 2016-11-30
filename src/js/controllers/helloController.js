@@ -7,14 +7,10 @@ myApp.controller('helloController',['$scope','helloService','toolService',functi
     var params = {
     	'name':'caowencheng',
     	'age':'24'
-    }
+    };
 
     $scope.getData = function(){
-    	helloService.getResponse(params).then(function(data){
-    			console.log(data);
-    		},function(data){
-
-    		});
+        helloService.getData("checkBlackList",params);
     }
 
  }]);

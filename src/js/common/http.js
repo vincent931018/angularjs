@@ -4,14 +4,15 @@ myApp.factory('httpService', ['$q', '$http', '$rootScope', function($q, $http, $
 
 	var defer = $q.defer();
 	var data = {};
+	var url = "";
 
-    var getData = function(params){
+    var getData = function(url,params){
     	var httpConfig = {
 	        method: "JSONP",
 	        timeout: 3000,
 	        data: params,
 	        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-	        url: "http://192.168.0.107:8093/mock/checkBlackList?callback=JSON_CALLBACK",
+	        url: "http://192.168.0.107:8093/mock/" + url + "=JSON_CALLBACK",
 	        responseType: "json"
 	    };
     	$http(httpConfig)
@@ -28,9 +29,9 @@ myApp.factory('httpService', ['$q', '$http', '$rootScope', function($q, $http, $
 	    return defer.promise;
     };
 
-    var getResponse = function (params) {
+    var getResponse = function (url,params) {
             var delay = $q.defer();
-            var promise = getData(params);
+            var promise = getData(url,params);
             promise.then(function (data) {
                 delay.resolve(data);
             }, function (data) {
