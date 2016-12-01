@@ -30,15 +30,14 @@ myApp.factory('httpService', ['$q', '$http', '$rootScope', function($q, $http, $
     };
 
     var getReqConfig = function(name) {
-    	return reqConfigs[name]
+    	return reqConfigs[name];
     };
 
     var defer = $q.defer();
 
-    var getData = function(url, params) {
-        httpConfig.data = params;
-        httpConfig.url = url;
-        $http(httpConfig)
+    var getData = function(name, params) {
+        reqConfigs[name].data = params;
+        $http(reqConfigs[name])
             .success(function(data) {
                 if (data.success) {
                     defer.resolve(data);
@@ -53,9 +52,9 @@ myApp.factory('httpService', ['$q', '$http', '$rootScope', function($q, $http, $
         return defer.promise;
     };
 
-    var getResponse = function(url, params) {
+    var getResponse = function(name, params) {
         var delay = $q.defer();
-        var promise = getData(url, params);
+        var promise = getData(name, params);
         promise.then(function(data) {
             delay.resolve(data);
         }, function(data) {

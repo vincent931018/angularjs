@@ -9,16 +9,17 @@ myApp.service('helloService',['$q','httpService',function($q,httpService){
             isMock: true,
         }]);
 
-	this.getData = function(url,params){
+	this.getData = function(name,params){
 
 		var defer = $q.defer();
-		var promise = httpService.getResponse(url,params)
+		var promise = httpService.getResponse(name,params);
 		promise.then(function(data){
-			console.log(data);
 			defer.resolve(data);
 		},function(data){
 			defer.reject(data);
 		});
+
+		return defer.promise;
 	}
 
 }]);
