@@ -1,9 +1,9 @@
 <div ng-controller="startController">
 {{'starts:'+start}}
 <a href="#/hello"><button>跳转到hello</button></a>
-<start></start>
-<div start></div>
-<div class="start">q</div>
-<!-- directive: start -->
-<button ng-click = "clickAll()">全选</button>
+<start my-name = "cwc1" show = "showAlert(name)" has-checked = "hasChecked"></start>
+<start my-name = "cwc2" has-checked = "hasChecked"></start>
+<start my-name = "cwc3" has-checked = "hasChecked"></start>
+<start my-name = "cwc4" has-checked = "hasChecked"></start>
+<input type="checkbox" ng-checked = "hasCheckedAll" ng-click = "clickAll()" />全选
 </div>

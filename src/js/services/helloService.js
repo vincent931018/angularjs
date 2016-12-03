@@ -4,7 +4,13 @@ myApp.service('helloService',['$q','httpService',function($q,httpService){
 
 	httpService.addReqConfig([{
             name: 'checkBlackList',
-            url: '/checkBlackList',
+            url: 'checkBlackList',
+            retry: true,
+            isMock: true,
+        },
+        {
+            name: 'applyEnCode',
+            url: 'applyEnCode',
             retry: true,
             isMock: true,
         }]);

@@ -16,7 +16,7 @@ myApp.factory('mockInterceptor', ['$q', function($q) {
                 	//todo 1
                 }else{
                 	request.method = 'JSONP';
-                	baseUrl = "http://192.168.146.213:8093/mock";
+                	baseUrl = "http://192.168.0.108:8093/mock/";
                     request.url = baseUrl + request.url + "?callback=JSON_CALLBACK";
                 }
             }
