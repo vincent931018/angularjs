@@ -18,3 +18,5 @@ my first angularjs project
 	#rsa加密算法Demo:
 		'./src/js/common/rsa',
 		'./src/js/common/http.js';
+	#动画效果Demo:
+		'./src/js/common/animate.js'；
