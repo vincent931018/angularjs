@@ -1,5 +1,6 @@
-<div ng-controller="helloController">
+<div>
    {{"hello:"+hello}}
    <a href="#/start"><button>跳转到start</button></a>
-   <button ng-click = "getData()">ajax请求</button>
+   <button>ajax请求</button>
+   <div ui-view = 'hello-child' class="fad"></div>
 </div>

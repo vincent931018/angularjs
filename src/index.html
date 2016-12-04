@@ -12,15 +12,19 @@
   <title>Angular Router</title>
 </head>
 
-<body ng-view ng-controller = 'globalController'>
+<body ui-view ng-controller = 'globalController' class="fad">
 
 <!-- bower:js -->
 <script src="js/lib/angular/angular.js"></script>
 <script src="js/lib/angular-route/angular-route.js"></script>
 <script src="js/lib/lodash/lodash.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="js/lib/jquery/dist/jquery.js"></script>
 <!-- endbower -->
 <!-- inject:js -->
 <script src="js/index.js"></script>
+<script src="js/common/animate.js"></script>
 <script src="js/common/http.js"></script>
 <script src="js/common/interceptor.js"></script>
 <script src="js/common/toolService.js"></script>

@@ -1,24 +1,42 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ui.router','ngAnimate']);
 
-myApp.run(['$rootScope', function($rootScope) {
+myApp.run(['$rootScope','$location', function($rootScope,$location) {
 
     console.log('angular project is config !');
 
 }]);
 
-myApp.config(['$routeProvider', '$httpProvider',function($routeProvider,$httpProvider) {
+myApp.config(['$stateProvider', '$urlRouterProvider','$httpProvider',function($stateProvider,$urlRouterProvider,$httpProvider) {
 
-    $routeProvider
-        .when('/start', {
-            templateUrl: 'tpls/start.html',
-            controller: 'startController'
+    $urlRouterProvider.when("", "/start");
+    $urlRouterProvider.otherwise('/start');
+    $stateProvider
+        .state('start', {
+            url: '/start',
+            views:{
+                '':{
+                    templateUrl: 'tpls/start.html',
+                    controller: 'startController'
+                }
+            }
         })
-        .when('/hello', {
-            templateUrl: 'tpls/hello.html',
-            controller: 'helloController'
+        .state('hello', {
+            abstract: true,
+            url: '/hello',
+            views:{
+                '':{
+                    templateUrl: 'tpls/hello.html',
+                    controller: 'helloController'
+                }
+            }
         })
-        .otherwise({
-            redirectTo: '/start'
+        .state('hello.hello-child', {
+            url: '/hello-child',
+            views:{
+                'hello-child':{
+                    templateUrl: 'tpls/hello-child.html'
+                }
+            }
         });
 
         $httpProvider.interceptors.push('mockInterceptor');
