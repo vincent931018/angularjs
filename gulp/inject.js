@@ -11,7 +11,7 @@ gulp.task('devIndex', function () {
     return gulp.src('src/index.html')
         .pipe(inject(gulp.src('src/css/*.css', {read: false}), {relative: true}))
         .pipe(inject(gulp.src(['src/js/index.js','src/js/common/**/*.js','src/js/controllers/*.js','src/js/services/*.js','src/js/directives/*.js'] ,{read: false}), {relative: true}))
-        .pipe(gulp.dest('src/'));
+        .pipe(gulp.dest('./src'));
 });
 
 gulp.task('bower', function () {
@@ -20,7 +20,7 @@ gulp.task('bower', function () {
             optional: 'configuration',
             goes: 'here'
         }))
-        .pipe(gulp.dest('src'));
+        .pipe(gulp.dest('./src'));
 });
 
 gulp.task('inject', ['bower','devIndex'],function () {
