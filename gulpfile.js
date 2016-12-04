@@ -20,7 +20,7 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
 });
 
 gulp.task('eslint', function() {
-    return gulp.src(['src/js/**/*.js','!src/js/lib/**/*.js'])
+    return gulp.src(['src/js/**/*.js','!src/js/lib/**/*.js','!src/js/common/rsa/**/*.js'])
     .pipe(eslint())
     .pipe(eslint.format())
 });
@@ -29,7 +29,7 @@ gulp.task('eslint', function() {
  *  Default task clean temporaries directories and launch the
  *  main optimization build task
  */
-gulp.task('default',['eslint'],function() {
+gulp.task('default',['eslint','inject'],function() {
     gulp.run('serve');
 });
 

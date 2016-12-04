@@ -10,15 +10,20 @@ gulp.task('devIndex', function () {
     // It's not necessary to read the files (will speed up things), we're only after their paths:
     return gulp.src('src/index.html')
         .pipe(inject(gulp.src('src/css/*.css', {read: false}), {relative: true}))
-        .pipe(inject(gulp.src(['src/js/controllers/*.js','src/js/services/*.js'] ,{read: false}), {relative: true}))
+        .pipe(inject(gulp.src(['src/js/index.js','src/js/common/**/*.js','src/js/controllers/*.js','src/js/services/*.js','src/js/directives/*.js'] ,{read: false}), {relative: true}))
         .pipe(gulp.dest('src/'));
 });
 
 gulp.task('bower', function () {
-    gulp.src('src/index.html')
+    return gulp.src('src/index.html')
         .pipe(wiredep({
             optional: 'configuration',
             goes: 'here'
         }))
         .pipe(gulp.dest('src'));
+});
+
+gulp.task('inject', ['bower','devIndex'],function () {
+    //default
+    console.log('all js is injected!');
 });

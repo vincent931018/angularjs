@@ -15,26 +15,22 @@
 <body ng-view ng-controller = 'globalController'>
 
 <!-- bower:js -->
-<script src="./js/lib/angular/angular.min.js"></script>
-<script src="./js/lib/angular-route/angular-route.min.js"></script>
-<script src="./js/lib/lodash/lodash.js"></script>
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-route/angular-route.js"></script>
+<script src="js/lib/lodash/lodash.js"></script>
 <!-- endbower -->
-
-<script src = "js/index.js"></script>
-
+<!-- inject:js -->
+<script src="js/index.js"></script>
 <script src="js/common/http.js"></script>
 <script src="js/common/interceptor.js"></script>
 <script src="js/common/toolService.js"></script>
 <script src="js/common/rsa/gibberish-aes.js"></script>
 <script src="js/common/rsa/jsencrypt.js"></script>
-
-<script src="js/directives/start.js"></script>
-
-<!-- inject:js -->
-<script src="js/services/helloService.js"></script>
-<script src="js/services/startService.js"></script>
 <script src="js/controllers/helloController.js"></script>
 <script src="js/controllers/startController.js"></script>
+<script src="js/services/helloService.js"></script>
+<script src="js/services/startService.js"></script>
+<script src="js/directives/start.js"></script>
 <!-- endinject -->
 
 </body>

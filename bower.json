@@ -6,8 +6,9 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "^1.5.8",
-    "angular-route": "^1.5.8"
+    "angular": "^1.5.9",
+    "angular-route": "^1.5.8",
+    "lodash": "^4.17.2"
   },
   "devDependencies": {
     "angular": "^1.5.8",

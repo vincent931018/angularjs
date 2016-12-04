@@ -21,7 +21,7 @@ myApp.factory('mockInterceptor', ['$q', function($q) {
                         data += k + "=" + v + "&";
                     });
                     request.data = data.substr(0, data.length - 1);
-                    console.log('入参----:'+request.data);
+                    console.log('入参----:' + request.data);
                 	baseUrl = "http://192.168.0.108:8093/mock/";
                     request.url = baseUrl + request.url + "?callback=JSON_CALLBACK";
                 }

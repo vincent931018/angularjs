@@ -20,14 +20,14 @@ myApp.directive('start', ['$timeout', 'toolService', function($timeout, tool) {
             $timeout(function() {
                 element.find('input').on('click', function() {
                     //点击操作
-                    if (attrs.isSelect == 'false') {
+                    if (attrs.isSelect === 'false') {
                         attrs.isSelect = 'true';
                         i = i + 1;
                     } else {
                         tool.setValue('hasCheckedAll', false);
                         attrs.isSelect = 'false';
                         i = i - 1;
-                    };
+                    }
                     if (num === i) {
                         tool.setValue('hasCheckedAll', true);
                     } else {

@@ -15,6 +15,7 @@ myApp.factory('httpService', ['$q', '$http', '$rootScope','GibberishAES','JSEncr
 
     var reqConfig = {};
     var reqConfigs = {};
+    var _params = '';
 
     /**
      * 添加请求属性
