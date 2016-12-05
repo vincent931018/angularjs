@@ -6,7 +6,7 @@ var wiredep = require('wiredep').stream;
 //如果是要在<!-- bower:js -->
 //          <!-- endinject -->中引入文件则替换代码（加name属性）
 //          .pipe(inject(gulp.src('src/js/bower_components/*/*.min.js', {read: false}), {name: 'bower', relative: true}))
-gulp.task('devIndex', function () {
+gulp.task('devIndex',['bower'],function () {
     // It's not necessary to read the files (will speed up things), we're only after their paths:
     return gulp.src('src/index.html')
         .pipe(inject(gulp.src('src/css/*.css', {read: false}), {relative: true}))
@@ -23,7 +23,7 @@ gulp.task('bower', function () {
         .pipe(gulp.dest('./src'));
 });
 
-gulp.task('inject', ['bower','devIndex'],function () {
+gulp.task('inject', ['devIndex'],function () {
     //default
     console.log('all js is injected!');
 });
