@@ -1,11 +1,11 @@
 # angular-demo
 my first angularjs project
 
-#首先安装bower依赖和node依赖
+##首先安装bower依赖和node依赖
 bower依赖：bower install；
 node依赖：node install；
 
-#启动服务
+##启动服务
 起服务可以使用(直接在命令行输入以下代码即可)：<br/>
 1.node app.js（运用express框架导入静态资源的方法);<br/>
 2.gulp (利用gulp的bowsersync 的serve属性);
