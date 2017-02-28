@@ -1,11 +1,11 @@
-<div>
+<div >
     {{'starts:'+start}}
     <a href="#/hello/hello-child">
-        <button>跳转到hello</button>
+        <button>跳转到hello 0x05</button>
     </a>
-    <start my-name="cwc1" show="showAlert(name)" has-checked="hasChecked" is-select = 'false'></start>
-    <start my-name="cwc2" has-checked="hasChecked" is-select = 'false'></start>
-    <start my-name="cwc3" has-checked="hasChecked" is-select = 'false'></start>
-    <start my-name="cwc4" has-checked="hasChecked" is-select = 'false'></start>
+    <start my-name="cwc1" show="showAlert(name)" has-checked="a.hasChecked" is-select = 'false' set-parent-scope='setChangeS()' set-scope-foo='setChangeF()'></start>
+    <start my-name="cwc2" has-checked="a.hasChecked" is-select = 'false' set-parent-scope='setChangeS()' set-scope-foo='setChangeF()'></start>
+    <start my-name="cwc3" has-checked="a.hasChecked" is-select = 'false' set-parent-scope='setChangeS()' set-scope-foo='setChangeF()'></start>
+    <start my-name="cwc4" has-checked="a.hasChecked" is-select = 'false' set-parent-scope='setChangeS()' set-scope-foo='setChangeF()'></start>
     <input type="checkbox" ng-checked="hasCheckedAll" ng-click="clickAll()" />全选
 </div>

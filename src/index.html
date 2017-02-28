@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
   <link rel="shortcut icon"  href="img/favicon.ico" />
   <!-- bower:css -->
@@ -12,7 +12,10 @@
   <title>Angular Router</title>
 </head>
 
-<body ui-view ng-controller = 'globalController' class="fad">
+<body ui-view  class="fad" ng-controller = 'globalController'>
+<!-- <div ui-view  class="fad" style="height: 100%;width: 100%;">
+    
+</div> -->
 
 <!-- bower:js -->
 <script src="js/lib/angular/angular.js"></script>

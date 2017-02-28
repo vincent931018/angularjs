@@ -56,6 +56,6 @@ myApp.service('globalService',['$rootScope', function($rootScope) {
 }]);
 
 //手动启动angularjs项目
-angular.element(document).ready(function(){
-    angular.bootstrap(document, ['myApp']);
-});
+// angular.element(document).ready(function(){
+//     angular.bootstrap(document, ['myApp']);
+// });
