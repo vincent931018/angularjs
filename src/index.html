@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
-<head>
-  <link rel="shortcut icon"  href="img/favicon.ico" />
-  <!-- bower:css -->
-  <!-- endbower -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="css/myAppCss.css">
-  <!-- endinject -->
 
-  <meta charset="utf-8">
-  <title>Angular Router</title>
+<head>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/myAppCss.css">
+    <!-- endinject -->
+    <meta charset="utf-8">
+    <title>Angular Router</title>
 </head>
 
-<body ui-view  class="fad" ng-controller = 'globalController'>
-<!-- <div ui-view  class="fad" style="height: 100%;width: 100%;">
-    
-</div> -->
-
-<!-- bower:js -->
-<script src="js/lib/angular/angular.js"></script>
-<script src="js/lib/angular-route/angular-route.js"></script>
-<script src="js/lib/lodash/lodash.js"></script>
-<script src="js/lib/angular-animate/angular-animate.js"></script>
-<script src="js/lib/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="js/lib/jquery/dist/jquery.js"></script>
-<!-- endbower -->
-<!-- inject:js -->
-<script src="js/index.js"></script>
-<script src="js/common/animate.js"></script>
-<script src="js/common/http.js"></script>
-<script src="js/common/interceptor.js"></script>
-<script src="js/common/toolService.js"></script>
-<script src="js/common/rsa/gibberish-aes.js"></script>
-<script src="js/common/rsa/jsencrypt.js"></script>
-<script src="js/controllers/helloController.js"></script>
-<script src="js/controllers/startController.js"></script>
-<script src="js/services/helloService.js"></script>
-<script src="js/services/startService.js"></script>
-<script src="js/directives/start.js"></script>
-<!-- endinject -->
-
+<body ng-controller='globalController'>
+    <div ui-view class="fad" style="height: 100%;width: 100%;">
+    </div>
+    <!-- bower:js -->
+    <script src="js/lib/angular/angular.js"></script>
+    <script src="js/lib/angular-route/angular-route.js"></script>
+    <script src="js/lib/lodash/lodash.js"></script>
+    <script src="js/lib/angular-animate/angular-animate.js"></script>
+    <script src="js/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="js/lib/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="js/index.js"></script>
+    <script src="js/common/animate.js"></script>
+    <script src="js/common/http.js"></script>
+    <script src="js/common/interceptor.js"></script>
+    <script src="js/common/toolService.js"></script>
+    <script src="js/common/rsa/gibberish-aes.js"></script>
+    <script src="js/common/rsa/jsencrypt.js"></script>
+    <script src="js/controllers/helloController.js"></script>
+    <script src="js/controllers/startController.js"></script>
+    <script src="js/services/helloService.js"></script>
+    <script src="js/services/startService.js"></script>
+    <script src="js/directives/start.js"></script>
+    <!-- endinject -->
 </body>
+
 </html>
